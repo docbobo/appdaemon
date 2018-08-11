@@ -1,0 +1,20 @@
+alarm_control_panel:
+  module: alarm_control_panel
+  class: ArloAlarmControlPanel
+
+  state_topic: home/alarm
+  command_topic: home/alarm/set
+  availability_topic: home/alarm/availability
+
+  pending_time: 10
+  disarmed:
+    pending_time: 0 
+
+  arlo:
+    username: !secret arlo_user
+    password: !secret arlo_password 
+
+  mqtt:
+    host: !secret mqtt_host
+    port: !secret mqtt_port
+
