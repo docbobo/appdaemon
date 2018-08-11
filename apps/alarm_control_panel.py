@@ -51,6 +51,9 @@ class ArloAlarmControlPanel(hass.Hass):
         self.client.on_message = self.on_message
 
         self.client.will_set(self.availability_topic, 'offline', qos=1, retain=True)
+
+        if 'username' in config_mqtt:
+            self.client.username_pw_set(config_mqtt['username'], password=config_mqtt['password'])
         self.client.connect_async(config_mqtt['host'], config_mqtt['port'], 60)
 
         self.client.loop_start()

@@ -17,4 +17,3 @@ alarm_control_panel:
   mqtt:
     host: !secret mqtt_host
     port: !secret mqtt_port
-
