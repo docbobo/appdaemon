@@ -1,0 +1,5 @@
+.vscode
+**/__pycache__
+
+appdaemon.yaml
+apps/apps.yaml
